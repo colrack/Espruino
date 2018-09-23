@@ -108,7 +108,7 @@ exports.setCellOn = function(isOn, callback) {
     return new Promise(function(resolve) {
       Serial1.removeAllListeners();
       Serial1.on('data', function(x) {}); // suck up any data that gets transmitted from the modem as it boots (RDY, etc)
-      Serial1.setup(115200,{tx:PINS.GPRS_TXD,rx:PINS.GPRS_RXD});
+      Serial1.setup(9600,{tx:PINS.GPRS_TXD,rx:PINS.GPRS_RXD});
       PINS.PWR_GPRS_ON.reset();
       setTimeout(resolve,200);
     }).then(function() {
