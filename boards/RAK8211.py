@@ -129,8 +129,8 @@ def get_pins():
   pinutils.findpin(pins, "PD28", True)["functions"]["ADC1_IN4"]=0;
   pinutils.findpin(pins, "PD28", True)["functions"]["USART1_TX"]=0;
   pinutils.findpin(pins, "PD29", True)["functions"]["USART1_RX"]=0;
-  pinutils.findpin(pins, "PD12", True)["functions"]["GPRS_TX"]=0;
-  pinutils.findpin(pins, "PD20", True)["functions"]["GPRS_RX"]=0;
+  pinutils.findpin(pins, "PD12", True)["functions"]["GPRS_RX"]=0;
+  pinutils.findpin(pins, "PD20", True)["functions"]["GPRS_TX"]=0;
   pinutils.findpin(pins, "PD14", True)["functions"]["GPRS_RESET"]=0;
   pinutils.findpin(pins, "PD15", True)["functions"]["GPRS_PWRKEY"]=0;
   pinutils.findpin(pins, "PD6", True)["functions"]["GPRS_PWN_ON"]=0;
