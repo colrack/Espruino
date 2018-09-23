@@ -109,17 +109,19 @@ exports.setCellOn = function(isOn, callback) {
       Serial1.removeAllListeners();
       Serial1.on('data', function(x) {}); // suck up any data that gets transmitted from the modem as it boots (RDY, etc)
       Serial1.setup(9600,{tx:PINS.GPRS_TXD,rx:PINS.GPRS_RXD});
-      PINS.GPRS_RESET.set();
       PINS.PWR_GPRS_ON.reset();
       setTimeout(resolve,200);
     }).then(function() {
       PINS.PWR_GPRS_ON.set();
-      return new Promise(function(resolve){setTimeout(resolve,500);});
+      return new Promise(function(resolve){setTimeout(resolve,200);});
     }).then(function() {
-      PINS.GPRS_RESET.set();
-      return new Promise(function(resolve){setTimeout(resolve,5000);});
+      PINS.GPRS_PWRKEY.set();
+      return new Promise(function(resolve){setTimeout(resolve,2000);});
     }).then(function() {
-      console.log("FINAL");
+      PINS.GPRS_PWRKEY.reset();
+      return new Promise(function(resolve){setTimeout(resolve,1000);});
+    }).then(function() {
+      console.log("NB-IoT ON");
       this.cellOn = true;
       Serial1.removeAllListeners();
       if (callback) setTimeout(callback,10,Serial1);
