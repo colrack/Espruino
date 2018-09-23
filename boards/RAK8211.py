@@ -79,7 +79,7 @@ chip = {
 
 devices = {
   'BTN1' : { 'pin' : 'D30', 'pinstate' : 'IN_PULLDOWN' },
-  'GPRS' : {'pin_tx' : 'D12', 'pin_rx' : 'D20', 'pin_reset' : 'D14', 'pin_pwrkey' : 'D15', 'pin_pwron' : 'D6'},
+  'GPRS' : {'pin_tx' : 'D20', 'pin_rx' : 'D12', 'pin_reset' : 'D14', 'pin_pwrkey' : 'D15', 'pin_pwron' : 'D6'},
   'GPS' : {'pin_tx' : 'D9', 'pin_rx' : 'D8', 'pin_standby' : 'D7', 'pin_pwron' : 'D10', 'pin_reset' : 'D31'},
   'BME' : {'pin_cs' : 'D2', 'pin_sdi' : 'D3', 'pin_sck': 'D4', 'pin_sdo' : 'D5'},
   'LIS2MDL' : {'pin_scl' : 'D11', 'pin_sda': 'D13', 'pin_int' : 'D16'},
